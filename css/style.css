@@ -1,3 +1,48 @@
+:root {
+    --color1: #FE5CA6;
+    --color2: #AF3C75;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: pink;
+    background-color: var(--color2);
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: var(--color1);
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 500px;
+    height: 500px;
+    background-color: var(--color1);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.grid-item {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
