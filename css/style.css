@@ -1,6 +1,7 @@
 :root {
     --color1: #FE5CA6;
     --color2: #AF3C75;
+    --color3: #FFFFFF;
 }
 
 /* RESET */
@@ -31,7 +32,7 @@ main {
 .grid {
     width: 500px;
     height: 500px;
-    background-color: var(--color1);
+    background-color: var(--color2);
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -40,9 +41,13 @@ main {
 .grid-item {
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--color3);
+    color: var(--color3);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.active {
+    background-color: var(--color1);
 }
