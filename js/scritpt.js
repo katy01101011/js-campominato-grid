@@ -1,10 +1,13 @@
-let difficult = 10; // Cambia il numero per cambiare la dimensione della griglia
+// Cambia il numero per cambiare la dimensione della griglia
+console.log(document.getElementById('mylevel').value);
+let userChoice = document.getElementById('mylevel');
+console.log(userChoice, typeof(userChoice));
+let difficult = parseInt(userChoice.value);
+// console.log(difficult);
 let limit = Math.pow(difficult, 2);
-    console.log(limit);
 let grid = document.querySelector('.grid');
-    console.log(grid);
 
-document.getElementById('start').addEventListener('click', gridWithSquares);
+document.getElementById('start').addEventListener('click', gridWithSquares(difficult));
 
 // FUNCTIONS
 
@@ -12,11 +15,11 @@ document.getElementById('start').addEventListener('click', gridWithSquares);
  * Description // ADD: n 'clickable' squares in a grid
  * @returns {Object} // squares -> grid items
  */
-function gridWithSquares() {
+function gridWithSquares(gridSize) {
     grid.innerHTML = ''; // Ripulisco griglia
 
     for (let i = 1; i <= limit; i++) {
-        let gridItem = newGridSquare(i, difficult);
+        let gridItem = newGridSquare(i, gridSize);
         gridItem.addEventListener('click', function() {
         this.classList.add('active');
         })
